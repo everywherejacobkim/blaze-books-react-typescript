@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./styles.module.scss";
+import styles from "./jumbotron.module.scss";
 import bookImage from "../../assets/images/books-jumbo.jpg";
 
 interface JumbotronProps {
