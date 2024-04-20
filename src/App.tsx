@@ -6,8 +6,9 @@ import Jumbotron from "./components/jumbotron/Jumbotron";
 import { RootState } from "./redux/store";
 import { useDispatch } from "react-redux";
 import EditModal from "./components/modal/EditModal";
-import { updateBook } from "./redux/reducers";
+import { updateBook, addBook } from "./redux/reducers";
 import Footer from "./components/footer/Footer";
+import AddModal from "./components/modal/AddModal";
 
 type Book = {
   id: number;
@@ -18,17 +19,19 @@ type Book = {
 };
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [selectedBook, setSelectedBook] = useState<Book>();
 
   const books = useSelector((state: RootState) => state.books.books);
   const dispatch = useDispatch();
 
   const handleClose = () => {
-    setIsModalOpen(false);
+    setIsEditModalOpen(false);
+    setIsAddModalOpen(false);
   };
 
-  const handleSave = (
+  const handleUpdateSave = (
     id: number,
     name: string,
     price: number,
@@ -36,8 +39,26 @@ function App() {
     description: string
   ) => {
     dispatch(updateBook({ id, name, price, category, description }));
-    setIsModalOpen(false);
+    setIsEditModalOpen(false);
     console.log(name, price, category, description);
+  };
+
+  const handleAddSave = (
+    name: string,
+    price: number,
+    category: string,
+    description: string
+  ) => {
+    dispatch(
+      addBook({
+        name,
+        price,
+        category,
+        description,
+        id: Date.now(),
+      })
+    );
+    setIsAddModalOpen(false);
   };
 
   return (
@@ -47,6 +68,7 @@ function App() {
         title="Let Blaze Books light up your reading journey!"
         description="Explore, Discover, Read!"
         btnText="Add Book"
+        openModal={() => setIsAddModalOpen(true)}
       />
       <div id="card-section">
         {books.map((book) => {
@@ -62,7 +84,7 @@ function App() {
                     ...book,
                     description: book.description || "",
                   });
-                  setIsModalOpen(true);
+                  setIsEditModalOpen(true);
                 }}
               />
               {selectedBook && selectedBook.id === book.id && (
@@ -73,9 +95,9 @@ function App() {
                   price={selectedBook.price}
                   category={selectedBook.category}
                   description={selectedBook.description}
-                  isOpen={isModalOpen}
+                  isOpen={isEditModalOpen}
                   onClose={handleClose}
-                  onSave={handleSave}
+                  onSave={handleUpdateSave}
                 />
               )}
             </>
@@ -83,6 +105,15 @@ function App() {
         })}
       </div>
       <Footer />
+      <AddModal
+        isOpen={isAddModalOpen}
+        name={""}
+        price={0}
+        category={""}
+        description={""}
+        onClose={handleClose}
+        onSave={handleAddSave}
+      />
     </>
   );
 }

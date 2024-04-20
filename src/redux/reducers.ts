@@ -33,18 +33,19 @@ const initialState: BooksState = {
     },
     {
       id: 3,
-      name: "The Last House on Needless Street",
-      price: 19.99,
-      category: "Thriller",
-      description: "A chilling and captivating novel",
+      name: "A Fate Inked in Blood: Book One of the Saga",
+      price: 27.99,
+      category: "Fantasy",
+      description:
+        "A steamy romantasy steeped in Norse folklore, A Fate Inked in Blood stars a fierce heroine stuck in an arranged marriage, destined for more. With a fully-realized world packed with dynamic and complex heroes, this is a fantasy realm you will love your stay in.",
     },
     {
       id: 4,
-      name: "The Love Hypothesis",
+      name: "Remarkably Bright Creatures",
       price: 39.99,
-      category: "Romance",
+      category: "Animal",
       description:
-        "When a fake relationship between scientists meets the irresistible force of attraction, it throws error.",
+        "Sometimes a short synopsis is all you need: A detective octopus helps a grieving aquarium employee solve the mystery of her missing son. It’s certainly unique in vessel, but the themes of coping, recovering, and moving forward resonate whether you have two arms or eight.",
     },
   ],
   selectedBook: null,

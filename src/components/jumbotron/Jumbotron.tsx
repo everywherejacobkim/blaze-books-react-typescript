@@ -6,12 +6,14 @@ interface JumbotronProps {
   title: string;
   description: string;
   btnText: string;
+  openModal: () => void;
 }
 
 const Jumbotron: React.FC<JumbotronProps> = ({
   title,
   description,
   btnText,
+  openModal,
 }) => {
   return (
     <div id="top" className={styles["jumbotron-container"]}>
@@ -23,7 +25,9 @@ const Jumbotron: React.FC<JumbotronProps> = ({
           <h1 className={styles["title"]}>{title}</h1>
           <p className={styles["description"]}>{description}</p>
           <div className={styles["button-container"]}>
-            <button className={styles["button"]}>{btnText || "Button"}</button>
+            <button className={styles["button"]} onClick={openModal}>
+              {btnText || "Button"}
+            </button>
           </div>
         </div>
       </div>
