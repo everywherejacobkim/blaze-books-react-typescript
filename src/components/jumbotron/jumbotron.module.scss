@@ -1,6 +1,5 @@
 .jumbotron-container {
-  padding: 20px;
-  padding-top: 32px;
+  padding-top: 10px;
   @media (min-width: 768px) {
     padding: 30px 60px;
   }
@@ -9,28 +8,29 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 20px;
   align-items: center;
   margin: 15px;
   @media (min-width: 768px) {
     flex-direction: row;
+    gap: 60px;
   }
 }
 
 .image-container {
-  width: 500px;
+  width: 100%;
   img {
     width: 100%;
     border-radius: 10px;
   }
+  @media (min-width: 768px) {
+    width: 500px;
+  }
 }
 
 .text {
-  width: 50%;
-  margin-top: -10%;
-  margin: 2px;
+  margin: 10px;
   .title {
-    width: 60%;
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 16px;

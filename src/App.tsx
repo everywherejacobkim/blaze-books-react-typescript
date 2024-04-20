@@ -40,7 +40,6 @@ function App() {
   ) => {
     dispatch(updateBook({ id, name, price, category, description }));
     setIsEditModalOpen(false);
-    console.log(name, price, category, description);
   };
 
   const handleAddSave = (
@@ -74,9 +73,8 @@ function App() {
         {books.map((book) => {
           const imageUrl = `https://source.unsplash.com/random?${book.category}&orientation=landscape`;
           return (
-            <>
+            <div key={book.id}>
               <Card
-                key={book.id}
                 id={book.id}
                 imageUrl={imageUrl}
                 openModal={() => {
@@ -100,7 +98,7 @@ function App() {
                   onSave={handleUpdateSave}
                 />
               )}
-            </>
+            </div>
           );
         })}
       </div>

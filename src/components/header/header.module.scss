@@ -2,16 +2,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 80px;
+  padding: 20px 40px;
   position: sticky;
   top: 0;
   z-index: 1000;
   background-color: #fff;
+  @media (min-width: 768px) {
+    padding: 40px 80px;
+  }
 
   h1 {
-    font-size: 24pt;
+    font-size: 20pt;
     color: #333;
     margin: 0;
+    @media (min-width: 768px) {
+      font-size: 27pt;
+    }
   }
 
   .header-top {

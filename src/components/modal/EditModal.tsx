@@ -72,7 +72,7 @@ const EditModal: React.FC<ModalProps> = ({
           <textarea
             value={description}
             rows={7}
-            onChange={(e) => setCategory(e.target.value)}
+            onChange={(e) => setDescription(e.target.value)}
           />
           <div className={styles["modal-content-buttons"]}>
             <button onClick={onClose}>Close</button>

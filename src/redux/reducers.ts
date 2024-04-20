@@ -17,7 +17,7 @@ const initialState: BooksState = {
   books: [
     {
       id: 1,
-      name: "City in Ruins: A Novel",
+      name: "City in Ruins: A Novel Series",
       price: 29.99,
       category: "Fiction",
       description:
@@ -70,13 +70,9 @@ const booksSlice = createSlice({
       state.books = state.books.filter((book) => book.id !== action.payload);
       state.selectedBook = null;
     },
-    selectBook: (state, action: PayloadAction<Book>) => {
-      state.selectedBook = action.payload;
-    },
   },
 });
 
-export const { addBook, updateBook, deleteBook, selectBook } =
-  booksSlice.actions;
+export const { addBook, updateBook, deleteBook } = booksSlice.actions;
 
 export default booksSlice.reducer;
