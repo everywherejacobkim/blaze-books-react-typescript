@@ -14,7 +14,7 @@ const Jumbotron: React.FC<JumbotronProps> = ({
   btnText,
 }) => {
   return (
-    <div className={styles["jumbotron-container"]}>
+    <div id="top" className={styles["jumbotron-container"]}>
       <div className={styles["content"]}>
         <div className={styles["image-container"]}>
           <img src={bookImage} alt={title} />

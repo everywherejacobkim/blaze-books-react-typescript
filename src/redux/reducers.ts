@@ -17,17 +17,34 @@ const initialState: BooksState = {
   books: [
     {
       id: 1,
-      name: "Book 1",
-      price: 10,
+      name: "City in Ruins: A Novel",
+      price: 29.99,
       category: "Fiction",
-      description: "Description of Book 1",
+      description:
+        "Violet may have survived her first year at Basgiath War College for dragon riders, but this epic adventure is just heating up. An electrifying follow-up to a brutally addictive fantasy.",
     },
     {
       id: 2,
-      name: "Book 2",
-      price: 15,
+      name: "The Anxious Generation",
+      price: 24.99,
       category: "Non-fiction",
-      description: "Description of Book 2",
+      description:
+        "Addressing the ongoing teen mental illness crisis, this is an actionable approach to making a difference. It's practical and insightful, engaging and necessary.",
+    },
+    {
+      id: 3,
+      name: "The Last House on Needless Street",
+      price: 19.99,
+      category: "Thriller",
+      description: "A chilling and captivating novel",
+    },
+    {
+      id: 4,
+      name: "The Love Hypothesis",
+      price: 39.99,
+      category: "Romance",
+      description:
+        "When a fake relationship between scientists meets the irresistible force of attraction, it throws error.",
     },
   ],
   selectedBook: null,

@@ -12,7 +12,9 @@ const Header = ({ title }: Props) => {
         <h1>{title}</h1>
       </div>
       <div>
-        <a href="/" className={styles["header-top"]}>Top</a>
+        <a href="#top" className={styles["header-top"]}>
+          Top
+        </a>
       </div>
     </header>
   );
